@@ -226,3 +226,16 @@ let pesquisarDespesa = ()=>{
    carregaListaDespesas(despesas, true)
 
 }
+
+let openConsultPage = () =>{
+    let header = document.querySelector('#header')
+    let form = document.querySelector('#form')
+    let main = document.querySelector('#main')
+   
+    main.classList.add('swap');
+  
+    // Remove a classe swap após 0,5 segundos para que a transição termine
+    setTimeout(function() {
+      main.classList.remove('swap');
+    }, 5000);
+}
