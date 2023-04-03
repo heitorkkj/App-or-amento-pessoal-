@@ -7,17 +7,9 @@
 }
 
 :root{
-    --cgpt-black1: #212121;
     --cgpt-purple: #6c5ce7;
-    --cgpt-blue: #546E7A;
-    --cgpt-green: #78909C;
-    --cgpt-gray1: #424242;
-    --cgpt-gray2:#757575;
-    --cgpt-blue1: 	#546E7A;
-    --cgpt-black: #141414;
-    --cgpt-gray: #78909C;
-    --cgpt-lightgray: #b2b2b2;
-    --cgpt-white: 	#BDBDBD;
+    --cgpt-lightgray: #b2b2b25c;
+    --cgpt-white: 	#ffffff;
 }
 
 body{
@@ -27,6 +19,8 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+
+    background-color: var(--cgpt-lightgray);
 }
 
 main{
@@ -34,26 +28,95 @@ main{
     height: 80%;
 
     display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
 
     border-radius:10px;
-    background-color: #FFF;
+    background-color: var(--cgpt-white);
     box-shadow: 0px 0px 30px 4px rgba(0,0,0,0.2);
 }
 
 header{
-    width: 50%;
-    height: 100%;
+    width: 47%;
+    height: 95%;
 
+    display: flex;
+    flex-direction: column;
+    
     left:0;
     position: relative;
     will-change:left;
     transform: translateZ(0);
 
+    
     border-radius:inherit;
-    filter:brightness(5px);
     background-color: var(--cgpt-purple);
 }
+
+header i,
+header p,
+header nav{
+   padding: .9rem 1rem;
+   color:var(--cgpt-white);
+}
+
+header i{
+    display: flex;
+    align-items: center;
+
+    font-size: 1.557rem;
+    font-weight: 600;
+    line-height: 1.357rem;
+    gap:20px;  
+}
+
+header p{
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-align: justify;
+}
+
+header nav{
+    width: 90%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap:10px;
+    position: relative;
+}
+
+header img{
+    width: 300px;
+    height: 300px;
+}
+
+nav button{
+    padding: 10px 30px;
+    margin-bottom:10px;
+
+    border:none;
+    border-radius:5px;
+    position: relative;
+    left: -25%;
+    cursor:pointer;
+
+    will-change: background-color;
+    font-size: 1rem;
+    transition:all .6s 5ms;
+    border: 1px solid var(--cgpt-white);
+    background-color: inherit;
+    color:inherit;
+}
+
+nav button:hover{
+    background-color: rgba(255, 255, 255, 0.843);
+    transform: scale(1.02);
+    color: #292929;
+}
+
 
 article{
     width: 50%;
@@ -64,7 +127,8 @@ article{
     will-change:left;
     transform: translateZ(0);
 
-    border-radius: 0 10px 10px 0;
+    border-radius: 10px 10px 10px 10px;
+    background-color: var(--cgpt-white);
 }
 
 @keyframes moveToLeft{
@@ -149,12 +213,6 @@ article{
         left: 0%;
     }
 }
-
-header{
-    
-}
-
-
 
 form{
     width: 100%;
