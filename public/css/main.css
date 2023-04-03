@@ -37,39 +37,123 @@ main{
     position: relative;
 
     border-radius:10px;
-    background-color: var(--cgpt-purple);
+    background-color: #FFF;
     box-shadow: 0px 0px 30px 4px rgba(0,0,0,0.2);
 }
 
 header{
     width: 50%;
     height: 100%;
+
     left:0;
-    position: absolute;
+    position: relative;
+    will-change:left;
+    transform: translateZ(0);
 
     border-radius:inherit;
     filter:brightness(5px);
-    transition: left 5s ease-in-out;
+    background-color: var(--cgpt-purple);
 }
 
 article{
     width: 50%;
     height: 100%;
-    right: 0;
-    position: absolute;
+
+    left: 0;
+    position: relative;
+    will-change:left;
+    transform: translateZ(0);
 
     border-radius: 0 10px 10px 0;
-    background-color: #FFF;
-    transition: right 5s ease-in-out;
 }
 
-header .swap{
-    left: 50%;
+@keyframes moveToLeft{
+    0%{
+        left:0%;
+    }
+    25%{
+        left: -10%;
+    }
+    50%{
+        left: -20%;
+    }
+    75%{
+        left: -30%;
+    }
+    95%{
+        left: -40%;
+    }
+    100%{
+        left: -50%;
+    }
 }
 
-article .swap {
-    right: 50%;
+@keyframes moveToRight{
+    0%{
+        left: 0%;
+    }
+    25%{
+        left: 10%;
+    }
+    50%{
+        left: 20%;
+    }
+    75%{
+        left: 30%;
+    }
+    95%{
+        left: 40%;
+    }
+    100%{
+        left: 50%;
+    }
 }
+@keyframes returnToLeft{
+    0%{
+        left: 50%;
+    }
+    25%{
+        left: 40%;
+    }
+    50%{
+        left: 30%;
+    }
+    75%{
+        left: 20%;
+    }
+    95%{
+        left: 10%;
+    }
+    100%{
+        left: 0%;
+    }
+}
+
+@keyframes returnToRight{
+    0%{
+        left:-50%;
+    }
+    25%{
+        left: -40%;
+    }
+    50%{
+        left: -30%;
+    }
+    75%{
+        left: -20%;
+    }
+    95%{
+        left: -10%;
+    }
+    100%{
+        left: 0%;
+    }
+}
+
+header{
+    
+}
+
 
 
 form{
@@ -134,5 +218,6 @@ form button:hover{
     transform: scale(1.02);
     cursor:pointer;
 }
+
 
 

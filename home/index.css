@@ -1,0 +1,87 @@
+*{
+    border:0; 
+    padding: 0; 
+    margin: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main{
+    width:80%;
+    height: 80%;
+
+    position:relative;
+    display: flex;
+    flex-direction: row;
+}
+
+article{
+    width:50%;
+    height: 100%;
+
+    position:relative;
+    left: 0;
+    animation: moveToRight 1s linear forwards;
+    
+    background-color: red;
+}
+
+section{
+    width:50%;
+    height: 100%;
+
+    position:relative;
+    left: 0;
+    animation: moveToLeft 1s linear forwards;
+
+    background-color: rgb(128, 0, 255);
+}
+
+@keyframes moveToLeft{
+    0%{
+        left: -0%;
+    }
+    25%{
+        left: -10%;
+    }
+    50%{
+        left: -20%;
+    }
+    75%{
+        left: -30%;
+    }
+    95%{
+        left: -40%;
+    }
+    100%{
+        left: -50%;
+    }
+}
+
+@keyframes moveToRight{
+    0%{
+        left: 0%;
+    }
+    25%{
+        left: 10%;
+    }
+    50%{
+        left: 20%;
+    }
+    75%{
+        left: 30%;
+    }
+    95%{
+        left: 40%;
+    }
+    100%{
+        left: 50%;
+    }
+}

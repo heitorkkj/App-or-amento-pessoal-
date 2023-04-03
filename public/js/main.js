@@ -229,13 +229,16 @@ let pesquisarDespesa = ()=>{
 
 let openConsultPage = () =>{
     let header = document.querySelector('#header')
+    let article = document.querySelector('#article')
     let form = document.querySelector('#form')
     let main = document.querySelector('#main')
-   
-    main.classList.add('swap');
-  
-    // Remove a classe swap após 0,5 segundos para que a transição termine
-    setTimeout(function() {
-      main.classList.remove('swap');
-    }, 5000);
+
+    if(article.style.animation == '' ||  article.style.animation == '1s linear 0s 1 normal forwards running returnToRight'){
+        article.style.animation = 'moveToLeft 1s linear forwards'
+        header.style.animation = 'moveToRight 1s linear forwards'
+
+    }else{
+        article.style.animation = 'returnToRight 1s linear forwards'
+        header.style.animation = 'returnToLeft 1s linear forwards'
+    }
 }
