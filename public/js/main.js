@@ -1,13 +1,13 @@
 const pageFiles = { 
     'register': {
-        header: '/App_orcamento_pessoal/components/cadastro/header.html',
-        article: '/App_orcamento_pessoal/components/cadastro/article.html',
+        header: 'App_orcamento_pessoal/components/cadastro/header.html',
+        article: 'App_orcamento_pessoal/components/cadastro/article.html',
         headerAnimation: 'returnToLeft 1s linear forwards', 
         articleAnimation: 'returnToRight 1s linear forwards'
     },
     'consult': {
-        header: '/App_orcamento_pessoal/components/consulta/header.html',
-        article: '/App_orcamento_pessoal/components/consulta/article.html',
+        header: 'App_orcamento_pessoal/components/consulta/header.html',
+        article: 'App_orcamento_pessoal/components/consulta/article.html',
         headerAnimation:'moveToRight 1s linear forwards',
         articleAnimation: 'moveToLeft 1s linear forwards'
     }
