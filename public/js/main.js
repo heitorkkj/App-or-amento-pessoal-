@@ -16,8 +16,8 @@ const pageFiles = {
 const appInit = () =>{
     const { header, article } = pageFiles['register']
 
-    $('#header').load(header)
-    $('#article').load(article)
+    $('#header').load('/components/cadastro/header.html')
+    $('#article').load('/components/cadastro/article.html')
 }
 
 document.body.addEventListener('load', appInit())
