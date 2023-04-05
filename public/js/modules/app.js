@@ -109,12 +109,7 @@ let cadastrarDespesas = ()=>{
     let tipo = document.getElementById('tipo')
     let descricao = document.getElementById('descricao')
     let valor = document.getElementById('valor')
-
-    //variaveis de ambiente do modal
-
-    let titulo = document.getElementById('modal-titulo')
-    let corpo = document.getElementById('modal-corpo')
-    let rodape = document.getElementById('modal-rodape')
+    let areaFeedback = document.getElementById('area-feedback')
 
     let despesas = new Despesas(
         ano.value,
@@ -122,19 +117,12 @@ let cadastrarDespesas = ()=>{
         dia.value,
         tipo.value,
         descricao.value,
-        valor.value
+        valor.value,
     )
 
     if(despesas.validarDados()){ 
 
         bd.gravar(despesas) 
-        rodape.innerHTML = ''
-        titulo.innerHTML = 'Sucesso na gravação'
-        titulo.className = ' text-success'    
-        corpo.innerHTML = 'Sua despesa foi adicionada com sucesso!'
-        rodape.innerHTML += `<button type="button" class="btn btn-success" data-dismiss="modal">Prosseguir</button>`
-
-        //$('#modalRegistro').modal('show')
 
         ano.value = ''
         mes.value = ''
@@ -142,17 +130,10 @@ let cadastrarDespesas = ()=>{
         tipo.value = ''
         descricao.value = ''
         valor.value = ''
+        areaFeedback.innerHTML = 'Despesa cadastrada com sucesso'        
 
     }else{
-
-        rodape.innerHTML = ''
-        titulo.innerHTML = 'Erro na gravação'
-        titulo.className = ' text-danger'   
-        corpo.innerHTML = 'Certifique-se de preencher todos os campos previstos'
-        rodape.innerHTML += `<button type="button" class="btn btn-danger" data-dismiss="modal">Voltar e corrigir</button>`
-
-        $('#modalRegistro').modal('show')
-
+        areaFeedback.innerHTML = 'Complete todos os campos!'      
     }    
 }
 
@@ -161,8 +142,7 @@ let carregaListaDespesas = (despesas = Array(), filtro = false)=>{
     if(despesas.length == 0 && filtro == false){
         despesas = bd.recuperarRegistros()
     }
-
-   console.log(document.getElementById('areaDespesas'))
+    let listasDespesas = document.getElementById('areaDespesas');
 
 
     despesas.forEach(function(d){
@@ -222,4 +202,3 @@ let pesquisarDespesa = ()=>{
 
    carregaListaDespesas(despesas, true)
 }
-

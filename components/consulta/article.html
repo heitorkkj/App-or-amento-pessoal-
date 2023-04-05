@@ -1,69 +1,70 @@
-<button id="btn-filter" onclick="openFilter()"><i class="bi bi-funnel"></i></button>
 
-<form id="form-consult">
-    <fieldset class="field-data">
-        <select class="form-control" id="ano">
-            <option value="">Ano</option>
-            <option value="2023">2023</option>
-        </select>
+  <button id="btn-filter" onclick="openFilter()"><i class="bi bi-funnel"></i></button>
 
-        <select class="form-control" id="mes">
-            <option value="">Mês</option>
-            <option value="depesaFix">Despesa Fixa</option>
-            <option value="1">Janeiro</option>
-            <option value="2">Fevereiro</option>
-            <option value="3">Março</option>
-            <option value="4">Abril</option>
-            <option value="5">Maio</option>
-            <option value="6">Junho</option>
-            <option value="7">Julho</option>
-            <option value="8">Agosto</option>
-            <option value="9">Setembro</option>
-            <option value="10">Outubro</option>
-            <option value="11">Novembro</option>
-            <option value="12">Dezembro</option>
-        </select>
+  <form id="form-consult">
+      <fieldset class="field-data">
+          <select class="form-control" id="ano">
+              <option value="">Ano</option>
+              <option value="2023">2023</option>
+          </select>
 
-        <input type="text" class="form-control" placeholder="Dia" id="dia" />
-    </fieldset>
+          <select class="form-control" id="mes">
+              <option value="">Mês</option>
+              <option value="depesaFix">Despesa Fixa</option>
+              <option value="1">Janeiro</option>
+              <option value="2">Fevereiro</option>
+              <option value="3">Março</option>
+              <option value="4">Abril</option>
+              <option value="5">Maio</option>
+              <option value="6">Junho</option>
+              <option value="7">Julho</option>
+              <option value="8">Agosto</option>
+              <option value="9">Setembro</option>
+              <option value="10">Outubro</option>
+              <option value="11">Novembro</option>
+              <option value="12">Dezembro</option>
+          </select>
 
-    <fieldset class="field-type">
-        <select class="form-control" id="tipo" >
-            <option value="">Tipo</option>
-            <option value="1">Alimentação</option>
-            <option value="2">Educação</option>
-            <option value="3">Lazer</option>
-            <option value="4">Saúde</option>
-            <option value="5">Transporte</option>
-        </select>
+          <input type="text" class="form-control" placeholder="Dia" id="dia" />
+      </fieldset>
 
-        
-        <input type="text" class="form-control" placeholder="Valor" id="valor" /> 
-    </fieldset>
+      <fieldset class="field-type">
+          <select class="form-control" id="tipo" >
+              <option value="">Tipo</option>
+              <option value="1">Alimentação</option>
+              <option value="2">Educação</option>
+              <option value="3">Lazer</option>
+              <option value="4">Saúde</option>
+              <option value="5">Transporte</option>
+          </select>
 
-    <fieldset class="field-desc">
-        <textarea placeholder="Descrição" id="descricao"></textarea> 
-        <button onclick="pesquisarDespesa()"><i class="bi bi-search"></i></button>       
-    </fieldset>
-</form>
+          
+          <input type="text" class="form-control" placeholder="Valor" id="valor" /> 
+      </fieldset>
 
-<table class="table">
-    <thead>
-      <tr>
-        <th>Data</th>
-        <th>Tipo</th>
-        <th>Descrição</th>
-        <th>Valor</th>
-        <th></th>
-      </tr>
-    </thead>
+      <fieldset class="field-desc">
+          <textarea placeholder="Descrição" id="descricao"></textarea> 
+          <button onclick="pesquisarDespesa()"><i class="bi bi-search"></i></button>       
+      </fieldset>
+  </form>
 
-    <tbody id="areaDespesas">
-      <tr>
-        <td>
+  <table class="table">
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+          <th>Valor</th>
+          <th></th>
+        </tr>
+      </thead>
 
-        </td>
-      </tr>
-    </tbody>
-</table>
+      <tbody id="areaDespesas">
+        <tr>
+          <td>
 
+          </td>
+        </tr>
+      </tbody>
+  </table>
+</body>

@@ -13,6 +13,8 @@ header i{
     font-size: 1.557rem;
     font-weight: 600;
     line-height: 1.357rem;
+    font-style: normal;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     gap:20px;  
 }
 
@@ -42,7 +44,6 @@ nav button{
     padding: 10px 30px;
     margin-bottom:10px;
 
-    border:none;
     border-radius:5px;
     position: relative;
     left: -25%;
@@ -62,15 +63,19 @@ nav button:hover{
     color: #292929;
 }
 
+article{
+    display:flex;
+    align-items: center;
+}
+
 form{
     width: 100%;
-    height: 100%;
-    margin: 20px 0;
+    height: 95%;
 
     display:flex; 
     flex-direction:column;
     align-items: center;
-    gap:50px;
+    justify-content: space-between;
 
     border-radius: inherit;
 }
@@ -125,5 +130,137 @@ form button:hover{
     cursor:pointer;
 }
 
+h5#area-feedback{
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.357rem;
+    letter-spacing: 0.02em;
+
+    color:#292929e1;
+}
 
 
+@media (width<1280px){
+
+    header img{
+        width:200px; 
+        height:200px;
+    }
+    
+    header nav{
+        flex-direction:column;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    nav button{
+
+        width: 100%;
+        left:0;
+        position: relative;
+    }
+    
+    form{
+        width: 100%;
+        height: 100%;
+        
+        border-radius:0;
+        justify-content: space-around;
+    }
+
+    fieldset{
+        width: 90%;
+        
+        flex-wrap: wrap;
+        gap:10px;
+    }
+
+    .form-control{
+        width: 100%;
+    }
+}
+
+@media (width<550px){
+
+    header i,
+    header p,
+    header nav{
+        padding: 0;
+    }
+
+    header i{
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-top:20px;
+    
+        font-size: 1.575rem;
+        gap:2px; 
+    }
+
+    header nav{
+        width: 60%;
+        align-items: center;
+        flex-wrap: nowrap;
+        flex-direction: row;
+
+        margin-top: 20px;
+        padding:.7rem;
+
+        border-radius:10px;
+        background-color: rgb(82, 69, 180);
+    }
+
+    nav button{
+        width: 50%;
+        padding:5px;
+        margin-bottom: 0px;
+    
+        border:none;
+        border-radius:5px;
+        position: relative;
+        left:0;
+    
+        will-change: background-color;
+        border:none;
+        background-color: inherit;
+    }
+
+    nav button:hover{
+        background-color: rgb(118, 103, 238);
+        color: white;
+    }    
+    
+
+    header img, header p{
+        display:none;
+    }
+
+    form{
+        width: 100%;
+        height: 100%;
+        
+        border-radius:0;
+        justify-content: space-evenly;
+    }
+
+    fieldset{
+        width: 90%;
+        
+        flex-wrap: wrap;
+        gap:10px;
+    }
+
+    .form-control{
+        width: 45%;
+    }
+
+    textarea{
+        height: 100px;
+    }
+
+
+}

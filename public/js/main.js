@@ -1,29 +1,45 @@
-let openPage = (page) =>{
-    let header = document.querySelector('#header')
-    let article = document.querySelector('#article')
-
-    if(page == 'register'){
-        article.style.animation = 'returnToRight 1s linear forwards'
-        header.style.animation = 'returnToLeft 1s linear forwards'
-
-        $('#header').load('../../components/cadastro/header.html')
-        $('#article').load('../../components/cadastro/article.html')
-    }else if(page == 'consult'){
-        article.style.animation = 'moveToLeft 1s linear forwards'
-        header.style.animation = 'moveToRight 1s linear forwards'
-
-        $('#header').load('../../components/consulta/header.html')
-        $('#article').load('../../components/consulta/article.html')
-        carregaListaDespesas()
+const pageFiles = { 
+    'register': {
+        header: '../../components/cadastro/header.html',
+        article: '../../components/cadastro/article.html',
+        headerAnimation: 'returnToLeft 1s linear forwards', 
+        articleAnimation: 'returnToRight 1s linear forwards'
+    },
+    'consult': {
+        header: '../../components/consulta/header.html',
+        article: '../../components/consulta/article.html',
+        headerAnimation:'moveToRight 1s linear forwards',
+        articleAnimation: 'moveToLeft 1s linear forwards'
     }
 }
 
-let appInit = () =>{
-    $('#header').load('../../components/cadastro/header.html')
-    $('#article').load('../../components/cadastro/article.html')
+const appInit = () =>{
+    const { header, article } = pageFiles['register']
+
+    $('#header').load(header)
+    $('#article').load(article)
 }
 
-let openFilter = () => {
+document.body.addEventListener('load', appInit())
+
+
+const openPage = (page) =>{
+    const { header, article, headerAnimation, articleAnimation } = pageFiles[page]
+
+    let headerElement = document.querySelector('#header')
+    let articleElement = document.querySelector('#article')
+
+    headerElement.style.animation = headerAnimation
+    articleElement.style.animation = articleAnimation
+
+    document.body.removeEventListener('load', appInit());
+  
+    $('#header').load(header)
+    $('#article').load(article)
+}
+
+
+const openFilter = () => {
     const formFilter = document.getElementById('form-consult')
     const btnFilter = document.getElementById('btn-filter')
 
@@ -35,3 +51,4 @@ let openFilter = () => {
         formFilter.style.display = 'none'
     }
 }
+
