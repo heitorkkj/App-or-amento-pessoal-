@@ -58,3 +58,7 @@ const openFilter = (search = '') => {
     }
 }
 
+let btnSearch = () =>{
+    pesquisarDespesa()
+    openFilter('search')
+}
