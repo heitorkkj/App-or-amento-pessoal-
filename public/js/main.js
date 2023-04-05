@@ -38,7 +38,7 @@ const openPage = (page) =>{
     $('#article').load(article)
 }
 
-const openFilter = () => {
+const openFilter = (search = '') => {
     const formFilter = document.getElementById('form-consult')
     const btnFilter  = document.getElementById('btn-filter')
     const areaDespesas = document.getElementById('table')
@@ -51,6 +51,10 @@ const openFilter = () => {
         btnFilter.className = ''
         formFilter.style.display = 'none'
         areaDespesas.style.visibility = 'visible'
+    }
+
+    if(search != ''){
+        btnFilter.className = ''
     }
 }
 

@@ -129,6 +129,7 @@ td{
         overflow-x: scroll;
         border: 1px solid #12121232;
         border-radius: 5px;
+        margin-top:7rem;
     }
 
     table::-webkit-scrollbar{

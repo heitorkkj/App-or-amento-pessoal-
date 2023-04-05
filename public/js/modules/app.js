@@ -61,7 +61,6 @@ class Bd{
             despesas.push(despesa)
 
         }
-        console.log(despesas)
 
         return despesas
     }
@@ -143,10 +142,10 @@ let carregaListaDespesas = (despesas = Array(), filtro = false)=>{
         despesas = bd.recuperarRegistros()
     }
     let listasDespesas = document.getElementById('areaDespesas');
+    listasDespesas.innerHTML = ''
 
 
     despesas.forEach(function(d){
-
         let linha = listasDespesas.insertRow()
         linha.insertCell(0).innerHTML = `${d.dia}/${d.mes}/${d.ano}`
         
@@ -183,9 +182,7 @@ let carregaListaDespesas = (despesas = Array(), filtro = false)=>{
             openPage('consult')
         }
         linha.insertCell(4).append(btn)
-
     })
-
 }
 
 let pesquisarDespesa = ()=>{
@@ -199,6 +196,7 @@ let pesquisarDespesa = ()=>{
     let despesa = new Despesas(ano, mes, dia, tipo, descricao, valor)
 
     let despesas = bd.pesquisar(despesa)
-
-   carregaListaDespesas(despesas, true)
+    
+    carregaListaDespesas(despesas, true)
 }
+
