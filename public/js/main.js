@@ -16,6 +16,8 @@ const pageFiles = {
 const appInit = () =>{
     const { header, article } = pageFiles['register']
 
+    $('#header').load(header)
+    $('#article').load(article)
 }
 
 document.body.addEventListener('load', appInit())
