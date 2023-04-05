@@ -103,7 +103,7 @@ td{
     transform: scale(1.3);
 }
 
-@media (width<450px){
+@media (width<550px){
 
     #btn-filter{
         margin-top:10%;
@@ -124,9 +124,14 @@ td{
     }
 
     table{
-        padding: 0;
-        margin: 0;
-        
-        margin-top:25%;
+        width: 100%;
+
+        overflow-x: scroll;
+        border: 1px solid #12121232;
+        border-radius: 5px;
+    }
+
+    table::-webkit-scrollbar{
+        visibility: hidden;
     }
 }
