@@ -1,13 +1,13 @@
 const pageFiles = { 
     'register': {
-        header: 'App_orcamento_pessoal/components/cadastro/header.html',
-        article: 'App_orcamento_pessoal/components/cadastro/article.html',
+        header: 'components/cadastro/header.html',
+        article: 'components/cadastro/article.html',
         headerAnimation: 'returnToLeft 1s linear forwards', 
         articleAnimation: 'returnToRight 1s linear forwards'
     },
     'consult': {
-        header: 'App_orcamento_pessoal/components/consulta/header.html',
-        article: 'App_orcamento_pessoal/components/consulta/article.html',
+        header: 'components/consulta/header.html',
+        article: 'components/consulta/article.html',
         headerAnimation:'moveToRight 1s linear forwards',
         articleAnimation: 'moveToLeft 1s linear forwards'
     }
@@ -38,17 +38,19 @@ const openPage = (page) =>{
     $('#article').load(article)
 }
 
-
 const openFilter = () => {
     const formFilter = document.getElementById('form-consult')
-    const btnFilter = document.getElementById('btn-filter')
+    const btnFilter  = document.getElementById('btn-filter')
+    const areaDespesas = document.getElementById('table')
 
     if(formFilter.style.display == 'none' || formFilter.style.display == ''){
         btnFilter.className = 'active'
         formFilter.style.display = 'flex'
+        areaDespesas.style.visibility = 'hidden'
     }else{
         btnFilter.className = ''
         formFilter.style.display = 'none'
+        areaDespesas.style.visibility = 'visible'
     }
 }
 

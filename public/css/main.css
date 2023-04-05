@@ -43,6 +43,7 @@ header{
 
     display: flex;
     flex-direction: column;
+    justify-content: center;
     
     left:0;
     position: relative;
@@ -150,14 +151,6 @@ article{
     }
     100%{
         left: 0%;
-    }
-}
-
-
-@media (width<1280px){
-    main{
-        width:90vw;
-        height:80vh;
     }
 }
 

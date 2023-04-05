@@ -173,14 +173,14 @@ let carregaListaDespesas = (despesas = Array(), filtro = false)=>{
         linha.insertCell(3).innerHTML = d.valor
 
         let btn = document.createElement('button')
-        btn.className = 'btn btn-danger'
-        btn.innerHTML = '<i class="fas fa-times"></i>'
+        btn.className = 'btn-remove'
+        btn.innerHTML = '<i class="bi bi-calendar2-x"></i>'
         btn.id = `id_despesa_${d.id}`
         btn.onclick = function (){
             let id = this.id.replace('id_despesa_', '')
 
             bd.remover(id)
-            //window.location.reload()
+            openPage('consult')
         }
         linha.insertCell(4).append(btn)
 
